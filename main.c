@@ -63,9 +63,9 @@ int main(){
             printf("Current State:%d\n",ptr->id_num);
             printf("String Status:: ");
             if(ptr->st_val==1)
-                printf("Accepted\n");
+                printf("String status: Accepted\n");
             else
-                printf("Rejected\n");
+                printf("String status: Rejected\n");
         }
         else
             return 0;
