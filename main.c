@@ -38,8 +38,36 @@ int main(){
         printf("Do you want to check it?(0 = N/1 = Y):");
         scanf("%d",&j);
         if(j){
-                printf("String Status: Accepted\n");
-                return 0;
+      while(n[pozitie]!='\0'){
+                a[pozitie]=(n[pozitie]-'0');
+                pozitie++;
+            }
+            i=0;
+            printf("Visited States:");
+            do{
+                vst_arr[i]=ptr->id_num;
+                if(a[i]==0){
+                    ptr=ptr->link0;
+                }
+                else if(a[i]==1){
+                    ptr=ptr->link1;
+                }
+                else{
+                    printf("Illegal Input\n");
+                    return 0;
+                }
+                printf("[%d]",vst_arr[i]);
+                i++;
+            }while(i<pozitie);
+            printf("\n");
+            printf("Current State:%d\n",ptr->id_num);
+            printf("String Status:: ");
+            if(ptr->st_val==1)
+                printf("Accepted\n");
+            else
+                printf("Rejected\n");
         }
+        else
+            return 0;
     }
 }
